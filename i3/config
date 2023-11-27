@@ -44,7 +44,7 @@ exec --no-startup-id mattermost-desktop &
 exec --no-startup-id thunderbird &
 
 # Gaps setup
-gaps inner 4
+gaps inner 12
 
 set $mod Mod4
 
@@ -52,7 +52,7 @@ set $mod Mod4
 font pango: Iosevka Nerd Font 10 
 
 # Disable titlebars
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 0
 for_window [class="Cheese"] floating enable
 for_window [class="Cypress"] floating enable
 for_window [class="Gnome-calculator"] floating enable
