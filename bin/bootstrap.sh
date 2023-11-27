@@ -25,6 +25,7 @@ fi
 ln -s $DOTFILES_DIR/nvim $XDG_CONFIG_HOME
 ln -s $DOTFILES_DIR/zellij $XDG_CONFIG_HOME
 ln -s $DOTFILES_DIR/kitty $XDG_CONFIG_HOME
-
+# starship doesn't appear to have its own directory for config, so I'm just putting it here
+ln -s $DOTFILES_DIR/starship/starship.toml $XDG_CONFIG_HOME/starship.toml
 # zsh deserves special treatment I guess
 ln -s $DOTFILES_DIR/zsh/.zshrc $HOME/.zshrc
