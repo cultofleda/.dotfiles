@@ -28,6 +28,7 @@ alias v="nvim"
 alias bat="batcat"
 alias glgs="git rev-parse HEAD"
 alias gcbr='git branch --sort=-committerdate | fzf --header "Checkout recent branch" --preview "git diff {1} --color=always" --pointer="❯"'
+alias lz="lazygit"
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
