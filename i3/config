@@ -21,7 +21,7 @@ exec_always --no-startup-id xset s off &
 exec_always --no-startup-id xset -dpms &
 
 # Keyboard rebind stuff
-exec_always --no-startup-id setxkbmap us &
+exec_always --no-startup-id setxkbmap eu &
 exec_always --no-startup-id xmodmap -e "clear lock" &
 exec_always --no-startup-id xmodmap -e "keycode 9 = Escape NoSymbol Escape" &
 exec_always --no-startup-id xmodmap -e "keycode 66 = Escape NoSymbol Escape" &
