@@ -1,27 +1,23 @@
 format = """
-[](#bb9af7)\
-[ 󰣇 ](bg:#bb9af7 fg:#090c0c)\
-[](bg:#769ff0 fg:#bb9af7)\
+[](#569cd9)\
+[󰣇 ](bg:#569cd9 fg:#1e1e1e)\
 $directory\
-[](fg:#769ff0 bg:#394260)\
+[](fg:#569cd9 bg:#1e1e1e)\
 $git_branch\
 $git_status\
-[](fg:#394260 bg:#212736)\
 $nodejs\
 $rust\
 $golang\
 $php\
-[](fg:#212736 bg:#1d2230)\
 $time\
-[ ](fg:#1d2230)\
 \n$character"""
 
 # Replace the '❯' symbol in the prompt with '➜'
 [character] # The name of the module we are configuring is 'character'
-success_symbol = '[暗](bold magenta)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+success_symbol = '[❯](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
 
 [directory]
-style = "fg:#e3e5e5 bg:#769ff0"
+style = "fg:#1e1e1e bg:#569cd9"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -34,35 +30,31 @@ truncation_symbol = "…/"
 
 [git_branch]
 symbol = ""
-style = "bg:#394260"
-format = '[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)'
+style = "bg:#1e1e1e"
+format = '[[ $symbol $branch ](fg:#d4d4d4 bg:#1e1e1e)]($style)'
 
 [git_status]
 style = "bg:#394260"
-format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)'
+format = '[[($all_status$ahead_behind )](fg:#c678dd bg:#1e1e1e)]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+format = '$symbol ($version)'
 
 [rust]
 symbol = ""
-style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+format = '$symbol ($version)'
 
 [golang]
 symbol = ""
-style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+format = '$symbol ($version)'
 
 [php]
 symbol = ""
-style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+format = '$symbol ($version)'
 
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
-style = "bg:#1d2230"
-format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
+style = "bg:#1e1e1e"
+format = '[[   $time ](fg:#808080 bg:#1e1e1e)]($style)'
