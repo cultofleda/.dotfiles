@@ -1,60 +1,70 @@
-# If you come from bash you might have to change your $PATH.
+# ---- bootstrap antigen
+source $HOME/.dotfiles/zsh/antigen.zsh
+
+# ----- start PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
+export PATH="$HOME/.local/share/fnm:$PATH"
+# ----- end PATH
 
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
-
-export EDITOR="nvim"
-
-# plugins
-plugins=(
-  docker
-  git
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-  z
-)
-
-source $ZSH/oh-my-zsh.sh
-
-# aliases 
-alias ll="exa --long --header --git --all"
-alias l="exa --long --header --git --all"
-alias zj="zellij"
-alias v="nvim"
-alias bat="batcat"
-alias glgs="git rev-parse HEAD"
-alias gcbr='git branch --sort=-committerdate | fzf --header "Checkout recent branch" --preview "git diff {1} --color=always" --pointer="❯"'
-alias lz="lazygit"
-# pnpm
+# ----- start globals
+export XDG_CONFIG_HOME=$HOME/.config/
+export BUN_INSTALL="$HOME/.bun"
 export PNPM_HOME="$HOME/.local/share/pnpm"
+export PYENV_ROOT="$HOME/.pyenv"
+export EDITOR="nvim"
+# ----- end globals
+
+# ----- start antigen-setup
+antigen use oh-my-zsh
+
+antigen bundle git
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle agkozak/zsh-z
+antigen bundle command-not-found
+# ----- end antigen-setup
+
+# ----- start aliases
+alias bat="batcat"
+alias gcbr='git checkout $(git branch --sort=-committerdate | fzf --header "Checkout recent branch" --preview "git diff {1} --color=always" --pointer="❯")'
+alias glgs="git rev-parse HEAD"
+alias l="eza --long --icons --header --git --all --no-user"
+alias ll="eza --long --icons --header --git --all"
+alias lz="lazygit"
+alias v="nvim"
+alias zj="zellij"
+# ----- end aliases
+
+# ----- start pnpm
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
-# pnpm end
+# ----- end pnpm
 
-# fnm
-export PATH="$HOME/.local/share/fnm:$PATH"
+# ----- start fnm
 eval "`fnm env`"
+# ----- end fnm
 
-# bun completions
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
-
-# Fzf
+# ----- start fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# ----- end fzf
 
-# Pyenv
-export PYENV_ROOT="$HOME/.pyenv"
+# ----- start pyenv
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 pyenv virtualenvwrapper_lazy
+# ----- end pyenv
 
-# Zellij autostart
+# ----- start zellij-autostart
 eval "$(zellij setup --generate-auto-start zsh)"
+# ----- end zellij-autostart
 
-# Starship prompt
+# ----- start prompt
 eval "$(starship init zsh)"
+# ----- end prompt
+
+# ----- commit to antigen
+antigen apply
