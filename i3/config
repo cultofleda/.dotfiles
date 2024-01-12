@@ -49,7 +49,7 @@ gaps inner 12
 set $mod Mod4
 
 # Font for window titles
-font pango: Iosevka Nerd Font 10 
+font pango: JetBrainsMono Nerd Font 10 
 
 # Disable titlebars
 for_window [class="^.*"] border pixel 0
@@ -59,7 +59,6 @@ for_window [class="Gnome-calculator"] floating enable
 for_window [class="Gnome-control-center"] floating enable
 for_window [class="keepassxc"] floating enable
 for_window [class="Lxappearance"] floating enable
-for_window [class="Nemo"] floating enable
 for_window [class="vlc"] floating enable
 for_window [title="Nitrogen"] floating enable
 
