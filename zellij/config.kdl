@@ -178,9 +178,9 @@ keybinds {
     shared_except "move" "locked" {
         bind "Ctrl h" { SwitchToMode "Move"; }
     }
-    shared_except "tmux" "locked" {
-        bind "Ctrl b" { SwitchToMode "Tmux"; }
-    }
+//    shared_except "tmux" "locked" {
+//        bind "Ctrl b" { SwitchToMode "Tmux"; }
+//    }
 }
 
 plugins {
@@ -210,7 +210,7 @@ ui {
 //    - true
 //    - false (Default)
 //
-simplified_ui false
+simplified_ui true
 
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
@@ -241,12 +241,12 @@ pane_frames false
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "vscode"
+theme "tokyo-night-dark"
 
 // The name of the default layout to load on startup
 // Default: "default"
 //
-default_layout "compact"
+default_layout "default-compact"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
