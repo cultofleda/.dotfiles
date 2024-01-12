@@ -13,7 +13,7 @@ return {
   end,
   opts = function(_, opts)
     opts.options = {
-      theme = "vscode",
+      theme = "tokyonight",
       component_separators = "|",
       section_separators = { left = "", right = "" },
     }

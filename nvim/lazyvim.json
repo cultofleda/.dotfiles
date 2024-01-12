@@ -1,6 +1,8 @@
 {
   "extras": [
-
+    "lazyvim.plugins.extras.editor.navic",
+    "lazyvim.plugins.extras.editor.symbols-outline",
+    "lazyvim.plugins.extras.lang.markdown"
   ],
   "news": {
     "NEWS.md": "2123"
