@@ -47,14 +47,12 @@ eval "`fnm env`"
 # Fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-pyenv virtualenvwrapper_lazy
-
 # Zellij autostart
 eval "$(zellij setup --generate-auto-start zsh)"
 
 # Starship prompt
 eval "$(starship init zsh)"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+pyenv virtualenvwrapper_lazy
