@@ -3,6 +3,8 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -21,8 +23,8 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # aliases 
-alias ll="exa --long --header --git --all"
-alias l="exa --long --header --git --all"
+alias ll="eza --long --header --git --all"
+alias l="eza --long --header --git --all"
 alias zj="zellij"
 alias v="nvim"
 alias bat="batcat"
