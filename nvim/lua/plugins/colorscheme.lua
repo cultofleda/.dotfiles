@@ -1,11 +1,11 @@
 return {
   {
-    "folke/tokyonight.nvim",
+    "JoosepAlviste/palenightfall.nvim",
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight-night",
+      colorscheme = "palenightfall",
     },
   },
 }

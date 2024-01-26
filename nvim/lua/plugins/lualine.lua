@@ -13,7 +13,7 @@ return {
   end,
   opts = function(_, opts)
     opts.options = {
-      theme = "tokyonight",
+      theme = "palenightfall",
       component_separators = "|",
       section_separators = { left = "", right = "" },
     }
