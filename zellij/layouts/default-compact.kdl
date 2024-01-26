@@ -1,7 +1,4 @@
 layout {
-  pane split_direction="vertical" {
-    pane
-  }  
   pane size=1 borderless=true {
     plugin location="file:$HOME/.dotfiles/zellij/plugins/zjstatus.wasm" {
       format_left  "{mode} {tabs}"
@@ -40,5 +37,8 @@ layout {
       tab_normal_fullscreen   "#[fg=#6C7086] {index} :: {name} [] "
       tab_active_fullscreen   "#[fg=#9399B2,bold,italic] {name} [] "
     }
-  }
+  }  
+  pane split_direction="vertical" {
+    pane
+  }  
 }
