@@ -1,11 +1,14 @@
 return {
   {
-    "JoosepAlviste/palenightfall.nvim",
+    "marko-cerovac/material.nvim",
   },
   {
     "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "palenightfall",
-    },
+    opts = function()
+      vim.g.material_style = "oceanic"
+      return {
+        colorscheme = "material",
+      }
+    end,
   },
 }
