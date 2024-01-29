@@ -5,7 +5,7 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.color_scheme = "Palenight (Gogh)"
+config.color_scheme = "Material (base16)"
 config.font = wezterm.font("JetBrainsMono Nerd Font Propo", {
 	weight = "Medium",
 })
