@@ -8,7 +8,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-
+export DOTFILES=$HOME/.dotfiles
 export EDITOR="nvim"
 
 # plugins
@@ -21,6 +21,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+source $DOTFILES/zsh/scripts/gli.sh
 
 # aliases 
 alias ll="eza --long --header --git --all"
