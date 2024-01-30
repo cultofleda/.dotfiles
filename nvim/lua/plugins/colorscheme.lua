@@ -5,7 +5,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = function()
-      vim.g.material_style = "oceanic"
+      vim.g.material_style = "darker"
       return {
         colorscheme = "material",
       }
