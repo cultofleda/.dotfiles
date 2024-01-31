@@ -11,8 +11,7 @@
 
 # Startup apps
 exec_always --no-startup-id export LC_ALL=C &
-# Only use the following script when at home
-exec_always --no-startup-id $HOME/.screenlayout/work-layout.sh &
+exec_always --no-startup-id autorandr --change &
 exec_always --no-startup-id nitrogen --restore &
 exec_always --no-startup-id $HOME/.config/polybar/polybar.sh &
 exec_always --no-startup-id dunst &
@@ -67,6 +66,9 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec wezterm
+
+# reboot autorandr
+bindsym $mod+Shift+a exec --no-startup-id autorandr -c
 
 # kill focused window
 bindsym $mod+Shift+q kill
