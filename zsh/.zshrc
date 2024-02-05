@@ -15,13 +15,14 @@ export EDITOR="nvim"
 plugins=(
   docker
   git
+  z
   zsh-autosuggestions
   zsh-syntax-highlighting
-  z
 )
 
 source $ZSH/oh-my-zsh.sh
 source $DOTFILES/zsh/scripts/gli.sh
+source $DOTFILES/zsh/scripts/gcbr.sh
 
 # aliases 
 alias ll="eza --long --header --git --all"
@@ -30,7 +31,8 @@ alias zj="zellij"
 alias v="nvim"
 alias bat="batcat"
 alias glgs="git rev-parse HEAD"
-alias gcbr='git branch --sort=-committerdate | fzf --header "Checkout recent branch" --preview "git diff {1} --color=always" --pointer="❯"'
+alias gb="git_branch"
+alias gco="git_checkout"
 alias lz="lazygit"
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
