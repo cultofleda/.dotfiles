@@ -1,14 +1,10 @@
 return {
   {
-    "marko-cerovac/material.nvim",
-  },
-  {
-    "LazyVim/LazyVim",
-    opts = function()
-      vim.g.material_style = "darker"
-      return {
-        colorscheme = "material",
-      }
+    "AlexvZyl/nordic.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("nordic").load()
     end,
   },
 }
