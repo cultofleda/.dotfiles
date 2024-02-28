@@ -15,7 +15,7 @@ exec_always --no-startup-id autorandr --change &
 exec_always --no-startup-id nitrogen --restore &
 exec_always --no-startup-id $HOME/.config/polybar/polybar.sh &
 exec_always --no-startup-id dunst &
-exec_always --no-startup-id picom &
+# exec_always --no-startup-id picom &
 exec_always --no-startup-id xset s off &
 exec_always --no-startup-id xset -dpms &
 
@@ -52,6 +52,8 @@ font pango: JetBrainsMono Nerd Font 10
 
 # Disable titlebars
 for_window [class="^.*"] border pixel 0
+
+# Define floating windows
 for_window [class="Cheese"] floating enable
 for_window [class="Cypress"] floating enable
 for_window [class="Gnome-calculator"] floating enable
@@ -59,6 +61,7 @@ for_window [class="Gnome-control-center"] floating enable
 for_window [class="keepassxc"] floating enable
 for_window [class="Lxappearance"] floating enable
 for_window [class="vlc"] floating enable
+for_window [class="Alert"] floating enable
 for_window [title="Nitrogen"] floating enable
 
 # Use Mouse+$mod to drag floating windows to their wanted position
