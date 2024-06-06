@@ -13,9 +13,9 @@ return {
   end,
   opts = function(_, opts)
     opts.options = {
-      theme = "nordic",
+      -- theme = "catppuccin",
       component_separators = "|",
-      section_separators = { left = "", right = "" },
+      -- section_separators = { left = " ", right = " " },
     }
   end,
 }
