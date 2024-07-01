@@ -1,13 +1,16 @@
 return {
   {
-    "rose-pine/neovim",
-    name = "rose-pine",
+    "AlexvZyl/nordic.nvim",
+    as = "nordic",
     lazy = true,
+    config = function()
+      require("nordic").load()
+    end,
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "rose-pine",
+      colorscheme = "nordic",
     },
   },
 }
