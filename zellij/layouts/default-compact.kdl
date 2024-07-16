@@ -2,8 +2,6 @@ layout {
   pane size=1 borderless=true {
     plugin location="file:$HOME/.dotfiles/zellij/plugins/zjstatus.wasm" {
       format_left  "{mode} {tabs}"
-      format_right "{datetime}"
-      format_space "::"
 
       border_enabled  "false"
       border_char     "─"
@@ -12,23 +10,23 @@ layout {
 
       hide_frame_for_single_pane "false"
 
-      mode_normal        "#[bg=blue,fg=black] NORMAL "
-      mode_locked        "#[bg=yellow,fg=black] LOCKED "
-      mode_resize        "#[bg=yellow,fg=black] RESIZE "
-      mode_pane          "#[bg=yellow,fg=black] PANE "
-      mode_tab           "#[bg=yellow,fg=black] TAB "
-      mode_scroll        "#[bg=yellow,fg=black] SCROLL "
-      mode_enter_search  "#[bg=yellow,fg=black] ENTER SEARCH "
-      mode_search        "#[bg=yellow,fg=black] SEARCH "
-      mode_rename_tab    "#[bg=yellow,fg=black] TAB > RENAME "
-      mode_rename_pane   "#[bg=yellow,fg=black] PANE > RENAME "
-      mode_session       "#[bg=yellow,fg=black] SESSION "
-      mode_move          "#[bg=yellow,fg=black] MOVE "
-      mode_prompt        "#[bg=yellow,fg=black] PROMPT "
-      mode_tmux          "#[bg=orange,fg=black] TMUX "
+      mode_normal        "#[bg=blue,fg=black,bold] NORMAL "
+      mode_locked        "#[bg=yellow,fg=black,bold] LOCKED "
+      mode_resize        "#[bg=yellow,fg=black,bold] RESIZE "
+      mode_pane          "#[bg=yellow,fg=black,bold] PANE "
+      mode_tab           "#[bg=yellow,fg=black,bold] TAB "
+      mode_scroll        "#[bg=yellow,fg=black,bold] SCROLL "
+      mode_enter_search  "#[bg=yellow,fg=black,bold] ENTER SEARCH "
+      mode_search        "#[bg=yellow,fg=black,bold] SEARCH "
+      mode_rename_tab    "#[bg=yellow,fg=black,bold] TAB > RENAME "
+      mode_rename_pane   "#[bg=yellow,fg=black,bold] PANE > RENAME "
+      mode_session       "#[bg=yellow,fg=black,bold] SESSION "
+      mode_move          "#[bg=yellow,fg=black,bold] MOVE "
+      mode_prompt        "#[bg=yellow,fg=black,bold] PROMPT "
+      mode_tmux          "#[bg=orange,fg=black,bold] TMUX "
 
-      tab_normal   "#[fg=#6C7086] {name} "
-      tab_active   "#[fg=#9399B2,bold,italic] {name} "
+      tab_normal   "#[fg=white] {name} "
+      tab_active   "#[fg=black,bold,bg=yellow] {name} "
 
       datetime        "#[fg=#6C7086,bold] {format} "
       datetime_format "%A, %d %b %Y %H:%M"
@@ -37,8 +35,8 @@ layout {
       tab_normal_fullscreen   "#[fg=#6C7086] {index} :: {name} [] "
       tab_active_fullscreen   "#[fg=#9399B2,bold,italic] {name} [] "
     }
-  }  
+  }
   pane split_direction="vertical" {
     pane
-  }  
+  }
 }
