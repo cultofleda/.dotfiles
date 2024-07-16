@@ -1,7 +1,16 @@
 include window.conf
 include font.conf
 
+cursor_blink_interval 0.5
+
+include tokyo-night-night.conf
+
+tab_bar_edge            top
+tab_bar_style           powerline
+enable_audio_bell       no
+
+
 # BEGIN_KITTY_THEME
-# VSCode_Dark
+# Catppuccin-Mocha
 include current-theme.conf
 # END_KITTY_THEME
