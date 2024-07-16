@@ -7,8 +7,12 @@ killall -q polybar
 while pgrep -x polybar >/dev/null; do sleep 1; done
 
 # Launch polybar
-# polybar --config=$HOME/.config/polybar/config.ini example &
+# polybar --config=$HOME/.config/polybar/config.ini main &
 
 for m in $(polybar --list-monitors | cut -d":" -f1); do
-	MONITOR=$m polybar --reload --config=$HOME/.config/polybar/config.ini example &
+  MONITOR=$m polybar --reload --config=$HOME/.config/polybar/config.ini main &
 done
+
+# for m in $(polybar --list-monitors | cut -d":" -f1); do
+#   MONITOR=$m polybar --reload --config=$HOME/.config/polybar/config.ini placeholder &
+# done
