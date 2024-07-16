@@ -12,12 +12,13 @@
 # Startup apps
 exec_always --no-startup-id export LC_ALL=C &
 exec_always --no-startup-id autorandr --change &
-exec_always --no-startup-id nitrogen --restore &
-exec_always --no-startup-id $HOME/.config/polybar/polybar.sh &
 exec_always --no-startup-id dunst &
-# exec_always --no-startup-id picom &
 exec_always --no-startup-id xset s off &
 exec_always --no-startup-id xset -dpms &
+exec_always --no-startup-id picom &
+exec_always --no-startup-id nitrogen --restore &
+exec_always --no-startup-id $HOME/.config/polybar/polybar.sh &
+exec_always --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh,secrets,pkcs11
 
 # Keyboard rebind stuff
 exec_always --no-startup-id setxkbmap eu &
@@ -35,76 +36,67 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws0 "10"
 
 # Startup GUI apps
-exec --no-startup-id nextcloud &
-exec --no-startup-id mattermost-desktop &
-exec --no-startup-id thunderbird &
+exec --no-startup-id kitty btop &
 
 # Gaps setup
-gaps inner 12
+gaps inner 4
+gaps top 48
 
 set $mod Mod4
 
 # Font for window titles
-font pango: JetBrainsMono Nerd Font 10 
+font pango: JetBrainsMono Nerd Font SemiBold 10
 
 # Disable titlebars
 for_window [class="^.*"] border pixel 0
 
 # Define floating windows
+for_window [class="Alert"] floating enable
 for_window [class="Cheese"] floating enable
 for_window [class="Cypress"] floating enable
 for_window [class="Gnome-calculator"] floating enable
 for_window [class="Gnome-control-center"] floating enable
-for_window [class="keepassxc"] floating enable
 for_window [class="Lxappearance"] floating enable
+for_window [class="keepassxc"] floating enable
 for_window [class="vlc"] floating enable
-for_window [class="Alert"] floating enable
 for_window [title="Nitrogen"] floating enable
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec wezterm
+bindsym $mod+Return exec kitty
 
 # reboot autorandr
-bindsym $mod+Shift+a exec --no-startup-id autorandr -c
+bindsym $mod+Shift+p exec --no-startup-id autorandr -c
 
 # kill focused window
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+Escape exec --no-startup-id $HOME/.config/i3/lock-screen.sh
 
-bindsym $mod+d exec --no-startup-id "rofi -show drun"
-bindsym Mod1+Tab exec --no-startup-id "rofi -show window"
-bindsym $mod+Shift+f exec --no-startup-id "nemo"
-bindsym $mod+Shift+b exec --no-startup-id "google-chrome"
+bindsym $mod+d exec --no-startup-id $HOME/.config/rofi/launchers/type-4/launcher.sh
 
 # Screenshots
 bindsym $mod+Shift+s exec --no-startup-id maim --select | xclip -selection clipboard -t image/png && notify-send -t 3000 "Maim" "Screenshot saved to clipboard"
 bindsym $mod+Control+Shift+s exec --no-startup-id maim | xclip -selection clipboard -t image/png && notify-send -t 3000 "Maim" "Screenshot saved to clipboard"
 
-# Keylight setup
-bindsym Mod1+Shift+9 exec --no-startup-id ~/.scripts/turn-on-keylight.sh
-bindsym Mod1+Shift+0 exec --no-startup-id ~/.scripts/turn-off-keylight.sh
-
 # Scratchpad
-bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+minus scratchpad show
+bindsym $mod+Shift+a move scratchpad
+bindsym $mod+a scratchpad show
 
 # change focus
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -113,13 +105,13 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+/ split h
 
 # split in vertical orientation
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen
+bindsym $mod+Shift+f fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -133,7 +125,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+# bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -197,40 +189,37 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-#
-# bar {
-#  status_command i3status
-# }
+set $rosewater #f4dbd6
+set $flamingo #f0c6c6
+set $pink #f5bde6
+set $mauve #c6a0f6
+set $red #ed8796
+set $maroon #ee99a0
+set $peach #f5a97f
+set $yellow #eed49f
+set $green #a6da95
+set $teal #8bd5ca
+set $sky #91d7e3
+set $sapphire #7dc4e4
+set $blue #8aadf4
+set $lavender #b7bdf8
+set $text #cad3f5
+set $subtext1 #b8c0e0
+set $subtext0 #a5adcb
+set $overlay2 #939ab7
+set $overlay1 #8087a2
+set $overlay0 #6e738d
+set $surface2 #5b6078
+set $surface1 #494d64
+set $surface0 #363a4f
+set $base #24273a
+set $mantle #1e2030
+set $crust #181926
 
-set_from_resource $color0      i3wm.color0      #1e1e1e
-set_from_resource $color1      i3wm.color1      #f44747
-set_from_resource $color2      i3wm.color2      #608b4e
-set_from_resource $color3      i3wm.color3      #dcdcaa
-set_from_resource $color4      i3wm.color4      #569cd6
-set_from_resource $color5      i3wm.color5      #c678dd
-set_from_resource $color6      i3wm.color6      #56b6c2
-set_from_resource $color7      i3wm.color7      #d4d4d4
-set_from_resource $color8      i3wm.color8      #808080
-set_from_resource $color9      i3wm.color9      #f44747
-set_from_resource $color10     i3wm.color10     #608b4e
-set_from_resource $color11     i3wm.color11     #dcdcaa
-set_from_resource $color12     i3wm.color12     #569cd6
-set_from_resource $color13     i3wm.color13     #c678dd
-set_from_resource $color14     i3wm.color14     #56b6c2
-set_from_resource $color15     i3wm.color15     #d4d4d4
-set_from_resource $foreground  i3wm.foreground  #d4d4d4
-set_from_resource $background  i3wm.background  #1e1e1e
-set_from_resource $cursorColor i3wm.cursorColor #d4d4d4
-
-# class                  border  bg      text    indicator  child border
-client.focused           $color6 $color6 $color0 $color6 $color6
-client.focused_inactive  $color8 $color8 $color0 $color8 $color8
-client.unfocused         $color8 $color0 $color8 $color8 $color8
-client.focused_tab_title $color6 $color0 $color6
-client.urgent            $color3 $color0 $color3 $color8 $color8
-client.placeholder       $color6 $color0 $color6 $color6 $color8
-
-client.background $color6
-
+# target                 title     bg    text   indicator  border
+client.focused           $lavender $base $text  $rosewater $lavender
+client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
+client.unfocused         $overlay0 $base $text  $rosewater $overlay0
+client.urgent            $peach    $base $peach $overlay0  $peach
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+client.background        $base
