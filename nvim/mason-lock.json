@@ -1,0 +1,14 @@
+{
+  "bash-language-server": "5.4.0",
+  "eslint-lsp": "4.10.0",
+  "eslint_d": "13.1.2",
+  "json-lsp": "4.10.0",
+  "lua-language-server": "3.9.3",
+  "marksman": "2023-12-09",
+  "node-debug2-adapter": "v1.43.0",
+  "prettier": "3.3.2",
+  "prettierd": "0.25.3",
+  "shellcheck": "v0.10.0",
+  "tailwindcss-language-server": "0.0.19",
+  "vue-language-server": "2.0.24"
+}
